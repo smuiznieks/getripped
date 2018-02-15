@@ -1,0 +1,24 @@
+{
+  "name": "getripped",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smuiznieks/getripped.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smuiznieks/getripped/issues"
+  },
+  "homepage": "https://github.com/smuiznieks/getripped#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.33.4"
+  }
+}
