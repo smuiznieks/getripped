@@ -1,5 +1,5 @@
 // Import models
-var db = require('./models');
+var db = require('../models');
 
 module.exports = function(app) {
     // GET all social posts
