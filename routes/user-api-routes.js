@@ -1,5 +1,5 @@
 // Import models
-var db = require('./models');
+var db = require('../models');
 
 module.exports = function(app) {
     // GET all user information
@@ -15,7 +15,9 @@ module.exports = function(app) {
     // CREATE new user
     app.get('/api/user', function(req, res) {
         db.User.create(req.body).then(function(newUser) {
-            
+            res.json(newUser);
+        }).catch(function(err) {
+            res.json(err);
         })
     })
 };
