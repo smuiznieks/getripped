@@ -1,136 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Create an Account</title>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Compiled and minified CSS -->
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  	<link rel="stylesheet" type="text/css" href="./css/style.css">  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
+
 <body>
 	<div class="navbar-fixed">
-    <nav class="blue-grey" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="login" href="#" class="left">Login</a>
-        <a id="logout" href="#" class="left" hidden="true">Logout</a>
-        <a id="logo-container" href="index.html" class="brand-logo center">
-          <img height="50" src="placeholder.png">
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <a href="placeholder" class="userLink">User</a>
-          </li>
-          <li>
-            <a href="placeholder">Work Out Plans</a>
-          </li>
-          <li>
-            <a href="placeholder">Info and Videos</a>
-          </li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse right">
-          <i class="material-icons">menu</i>
-        </a>
-      </div>
-    </nav>
-  </div>
+		<nav class="blue-grey" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="login" href="#" class="left">Login</a>
+				<a id="logout" href="#" class="left" hidden="true">Logout</a>
+				<a id="logo-container" href="index.html" class="brand-logo center">
+					<img height="50" src="placeholder.png">
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<a href="placeholder" class="userLink">User</a>
+					</li>
+					<li>
+						<a href="placeholder">Work Out Plans</a>
+					</li>
+					<li>
+						<a href="placeholder">Info and Videos</a>
+					</li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse right">
+					<i class="material-icons">menu</i>
+				</a>
+			</div>
+		</nav>
+	</div>
 
-<br />
+	<br />
 	<div class="row">
 		<div class="col s5 offset-s1">
 			<div class="row">
-		      <div class="col s10 offset-s1">
-		        <h5 class="centeredTitle">Create an Account</h5>
-		        <div class="card-panel">
-		          <h6 class="centeredTitle">Sign up with your email address.</h6>
-		          <div class="row">
-			        <form class="col s12" method="put">
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			              <!-- <i class="small material-icons mdi-action-accessibility prefix"></i> -->
-			              <input placeholder="Desired Username" id="usernameInput" type="text" class="validate">
-			              <label for="usernameInput"></label>
-			            </div>
-			          </div>
+				<div class="col s10 offset-s1">
+					<h5 class="centeredTitle">Create an Account</h5>
+					<div class="card-panel">
+						<h6 class="centeredTitle">Sign up with your email address.</h6>
+						<div class="row">
+							<form class="col s12" method="put" id="createAcct">
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!-- <i class="small material-icons mdi-action-accessibility prefix"></i> -->
+										<input placeholder="Desired Username" id="usernameInput" type="text" class="validate">
+										<label for="usernameInput"></label>
+									</div>
+								</div>
 
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			<!--               <i class="mdi-communication-email prefix"></i> -->
-			              <input placeholder="Your e-mail" id="email" type="email" class="validate">
-			              <label for="email"></label>
-			            </div>
-			          </div>
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			<!--               <i class="mdi-action-lock-outline prefix"></i> -->
-			              <input placeholder="Password" id="password" type="password" class="validate">
-			              <label for="password"></label>
-			            </div>
-			          </div>
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			<!--               <i class="mdi-action-lock-outline prefix"></i> -->
-			              <input placeholder="Confirm Password" id="password" type="password" class="validate">
-			              <label for="password"></label>
-			            </div>
-			          </div>
-			          <div class="row">
-			              <div class="input-field col s6 offset-s3 ">
-			                <a class="btn waves-effect waves-light col "><h6>Create Account</h6></a>
-			              </div>
-			            </div>
-			        </form>
-		         </div>
-		        </div>
-		      </div>
-		    </div>
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!--               <i class="mdi-communication-email prefix"></i> -->
+										<input placeholder="Your e-mail" id="email" type="email" class="validate">
+										<label for="email"></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!--               <i class="mdi-action-lock-outline prefix"></i> -->
+										<input placeholder="Password" id="password" type="password" class="validate">
+										<label for="password"></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!--               <i class="mdi-action-lock-outline prefix"></i> -->
+										<input placeholder="Confirm Password" id="password" type="password" class="validate">
+										<label for="password"></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s6 offset-s3 ">
+										<a class="btn waves-effect waves-light col ">
+											<h6>Create Account</h6>
+										</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col s5">
 			<div class="row">
-		      <div class="col s10 offset-s1">
-		        <h5 class="centeredTitle">Login with Existing Account</h5>
-		        <div class="card-panel">
-		          <br />
-		          <div class="row">
-			        <form class="col s12">
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			              <!-- <i class="small material-icons mdi-action-accessibility prefix"></i> -->
-			              <input placeholder="Username" id="usernameInput" type="text" class="validate">
-			              <label for="usernameInput"></label>
-			            </div>
-			          </div>
-			          <div class="row">
-			            <div class="input-field col s10 offset-s1">
-			<!--               <i class="mdi-action-lock-outline prefix"></i> -->
-			              <input placeholder="Password" id="password" type="password" class="validate">
-			              <label for="password"></label>
-			            </div>
-			          </div>
-			          
-			          <div class="row">
-			              <div class="input-field col s8 offset-s4 ">
-			                <a class="btn waves-effect waves-light col "><h6>Login</h6></a>
-			              </div>
-			            </div>
-			        </form>
-		         </div>
-		        </div>
-		      </div>
-		    </div>
-		</div>	
+				<div class="col s10 offset-s1">
+					<h5 class="centeredTitle">Login with Existing Account</h5>
+					<div class="card-panel">
+						<br />
+						<div class="row">
+							<form class="col s12" id"loginForm">
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!-- <i class="small material-icons mdi-action-accessibility prefix"></i> -->
+										<input placeholder="Username" id="usernameInput" type="text" class="validate">
+										<label for="usernameInput"></label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s10 offset-s1">
+										<!--               <i class="mdi-action-lock-outline prefix"></i> -->
+										<input placeholder="Password" id="password" type="password" class="validate">
+										<label for="password"></label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="input-field col s8 offset-s4 ">
+										<a class="btn waves-effect waves-light col ">
+											<h6>Login</h6>
+										</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-<footer class="page-footer amber">
-    <div class="row center">
-      <div class="col s12">
-        <h5 class="white-text">Get Ripped &copy; 2017</h5>
-        <p class="grey-text text-lighten-4">Powered by whatever we end up using</p>
-        <a class="grey-text text-lighten-4" href="https://www.placeholder.com">www.placeholder.com</a>
-      </div>
-    </div>
-  </footer>
+	<footer class="page-footer amber">
+		<div class="row center">
+			<div class="col s12">
+				<h5 class="white-text">Get Ripped &copy; 2017</h5>
+				<p class="grey-text text-lighten-4">Powered by whatever we end up using</p>
+				<a class="grey-text text-lighten-4" href="https://www.placeholder.com">www.placeholder.com</a>
+			</div>
+		</div>
+	</footer>
 
 </body>
+
 </html>
