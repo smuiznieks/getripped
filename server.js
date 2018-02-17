@@ -21,10 +21,25 @@ app.set('views', path.join(__dirname, 'views'));
 // Routes
 require('./routes/user-api-routes.js')(app);
 require('./routes/social-api-routes.js')(app);
+require('./routes/api-routes.js')(app);
 
 // Listen to server
-db.sequelize.sync({}).then(function() {
-    app.listen(PORT, function() {
+db.sequelize.sync({}).then(function () {
+    app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
+});
+
+// Error Handling
+app.use(function (err, req, res, next) {
+    if (!err) {
+        next();
+    }
+    console.log(err);
+    res
+        .status(500)
+        .json({
+            error: 500,
+            message: err.message
+        });
 });
