@@ -1,0 +1,64 @@
+extends layout
+
+block content
+	div (class="row"
+		div (class="col s5 offset-s1")
+			div (class="row")
+				div (class="col s10 offset-s1")
+					h5 (class="centeredTitle")Create an Account
+					div (class="card-panel")
+						h6 (class="centeredTitle")Sign up with your email address.
+						div (class="row")
+							form (class="col s12" method="put" id="createAcct")
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!-- <i class="small material-icons mdi-action-accessibility prefix"></i> -->
+										input (placeholder="Desired Username" id="usernameInput" type="text" class="validate")
+										label (for="usernameInput")	
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!--<i class="mdi-communication-email prefix"></i> -->
+										input (placeholder="Your e-mail" id="email" type="email" class="validate")
+										label (for="email")
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!-- <i class="mdi-action-lock-outline prefix"></i> -->
+										input (placeholder="Password" id="password" type="password" class="validate")
+										label (for="password")
+
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!-- <i class="mdi-action-lock-outline prefix"></i> -->
+										input (placeholder="Confirm Password" id="password" type="password" class="validate")
+										label (for="password")
+
+								div (class="row")
+									div (class="input-field col s6 offset-s3"
+										a (class="btn waves-effect waves-light col")
+											h6 Create Account
+						
+		div (class="col s5")
+			div (class="row")
+				div (class="col s10 offset-s1")
+					h5 (class="centeredTitle") Login with Existing Account
+					div (class="card-panel")
+						br
+						div (class="row")
+							form (class="col s12" id"loginForm")
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!-- i (class="small material-icons mdi-action-accessibility prefix") -->
+										input (placeholder="Username" id="usernameInput" type="text" class="validate")
+										label (for="usernameInput")
+
+								div (class="row")
+									div (class="input-field col s10 offset-s1")
+										<!-- i (class="mdi-action-lock-outline prefix") -->
+										input (placeholder="Password" id="password" type="password" class="validate")
+										label (for="password")
+
+								div (class="row")
+									div (class="input-field col s8 offset-s4")
+										a (class="btn waves-effect waves-light col)
+											h6 Login
+										
