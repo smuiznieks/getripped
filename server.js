@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var pug = require('pug');
+var path = require('path');
 
 // Models
 var db = require("./models");
@@ -14,7 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Pug
-app.set('view engine', 'pug')
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
 // Routes
 require('./routes/user-api-routes.js')(app);
