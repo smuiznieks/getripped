@@ -1,0 +1,14 @@
+html
+    head
+        title Let's get social
+        script(src='https://code.jquery.com/jquery-3.3.1.js')
+    body
+        h1 Your feed
+        div= social
+        ul
+          each val in photos
+            li(class='photo' id='')= val
+          each val in captions
+            li(class='caption' id='')= val
+          each val in users
+            li(class='user' id='')= val
