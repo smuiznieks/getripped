@@ -90,17 +90,22 @@ module.exports = function (app) {
                 message: 'You need to specify a valid muscle group by providing a \'group\' query string.'
             });
         }
-
+        console.log(req.body);
+        // res.render('exercise', { name: , description:  });
     });
 
+    // app.post('/api/exercises', function (req, res) {
+    //     var group = req.query.group;
+    //     console.log(group)
+    //         .then(function (group) {
+    //             res.json(group);
+    //         }).catch(function (err) {
+    //             res.json(err);
+    //         });
+    // });
 
-    // POST: upload a new social post
-    app.post('/api/exercises', function (req, res) {
-        console.log(req.body).then(function (newPost) {
-            res.json(newPost);
-        }).catch(function (err) {
-            res.json(err);
-        });
-    });
+    app.get("/exercise", function(req, res) {
+        res.render("exercise", req.body);
+      });
 
 };
