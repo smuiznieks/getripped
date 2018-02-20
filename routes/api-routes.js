@@ -48,7 +48,7 @@ module.exports = function (app) {
             .catch(next);
     }
 
-    
+
     app.get('/api/exercises', function (req, res, next) {
         if (req.query.group === 'arms') {
             combineWorkoutManager(req, res, next, exerciseEndpoint, [
@@ -90,5 +90,17 @@ module.exports = function (app) {
                 message: 'You need to specify a valid muscle group by providing a \'group\' query string.'
             });
         }
+
     });
+
+
+    // POST: upload a new social post
+    app.post('/api/exercises', function (req, res) {
+        console.log(req.body).then(function (newPost) {
+            res.json(newPost);
+        }).catch(function (err) {
+            res.json(err);
+        });
+    });
+
 };
