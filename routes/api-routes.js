@@ -90,8 +90,20 @@ module.exports = function (app) {
                 message: 'You need to specify a valid muscle group by providing a \'group\' query string.'
             });
         }
+
         console.log(req.body);
-        // res.render('exercise', { name: , description:  });
+        data = req.body;
+        var exerciseName = [];
+        var exerciseDescrip = [];
+        for (var i = 0; i < data.length; i++) {
+            exerciseName.push(data[i].name);
+            exerciseDescrip.push(data[i].description);
+        }
+        // res.render('exercise', { name: exerciseName, description: exerciseDescrip });
+        res.render("exercise", {
+            name: req.exerciseName,
+            description: req.exerciseDescrip
+        });
     });
 
     // app.post('/api/exercises', function (req, res) {
@@ -104,8 +116,8 @@ module.exports = function (app) {
     //         });
     // });
 
-    app.get("/exercise", function(req, res) {
+    app.get("/exercise", function (req, res) {
         res.render("exercise", req.body);
-      });
+    });
 
 };
