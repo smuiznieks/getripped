@@ -2,9 +2,8 @@
 var db = require('../models');
 
 module.exports = function(app) {
-    // GET: create feed of all posts
-    // /api/social
-    app.get('/', function(req, res) {
+    // GET create feed of all posts
+    app.get('/api/social', function(req, res) {
         db.Post.findAll({}).then(function(data) {
             var feedPhotos = [];
             var feedBody = [];
@@ -18,16 +17,16 @@ module.exports = function(app) {
         });
     });
 
-    // POST: upload a new social post
-    // app.post('/api/social', function(req, res) {
-    //     db.Post.create({
-    //         photo: req.body.photo,
-    //         body: req.body.caption,
-    //         UserId: 1
-    //     }).then(function(newPost) {
-    //         res.json(newPost);
-    //     }).catch(function(err) {
-    //         res.json(err);
-    //     });
-    // });
+    // POST upload a new social post
+    app.post('/api/social', function(req, res) {
+        db.Post.create({
+            photo: req.body.photo,
+            body: req.body.caption,
+            UserId: 1
+        }).then(function(newPost) {
+            res.json(newPost);
+        }).catch(function(err) {
+            res.json(err);
+        });
+    });
 };
