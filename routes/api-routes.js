@@ -91,16 +91,33 @@ module.exports = function (app) {
             });
         }
 
+        console.log(req.body);
+        data = req.body;
+        var exerciseName = [];
+        var exerciseDescrip = [];
+        for (var i = 0; i < data.length; i++) {
+            exerciseName.push(data[i].name);
+            exerciseDescrip.push(data[i].description);
+        }
+        // res.render('exercise', { name: exerciseName, description: exerciseDescrip });
+        res.render("exercise", {
+            name: req.exerciseName,
+            description: req.exerciseDescrip
+        });
     });
 
+    // app.post('/api/exercises', function (req, res) {
+    //     var group = req.query.group;
+    //     console.log(group)
+    //         .then(function (group) {
+    //             res.json(group);
+    //         }).catch(function (err) {
+    //             res.json(err);
+    //         });
+    // });
 
-    // POST: upload a new social post
-    app.post('/api/exercises', function (req, res) {
-        console.log(req.body).then(function (newPost) {
-            res.json(newPost);
-        }).catch(function (err) {
-            res.json(err);
-        });
+    app.get("/exercise", function (req, res) {
+        res.render("exercise", req.body);
     });
 
 };
