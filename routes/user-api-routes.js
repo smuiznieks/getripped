@@ -3,21 +3,19 @@ var db = require('../models');
 
 module.exports = function(app) {
     // GET all user information
-    // app.get('/api/user', function(req, res) {
-    //     db.User.findAll({}).then(function(data) {
-    //         var userData = {
-    //             user: data 
-    //         };
-    //         console.log(userData);
-    //     });
-    // });
+    app.get('/api/user', function(req, res) {
+        db.User.findAll({}).then(function(data) {
+            res.json(data);
+        });
+    });
 
-    // CREATE new user
+    // Render new user page
     app.get("/newuser", function (req, res) {
         res.render('newuser');
     });
 
-    app.get('/api/user', function(req, res) {
+    // Create new user
+    app.post('/api/user', function(req, res) {
         db.User.create({
             username: req.body.username,
             email: req.body.email,

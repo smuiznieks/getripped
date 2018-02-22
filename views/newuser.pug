@@ -7,13 +7,13 @@ block content
 				div(class="row")
 					form(class="col s12" method="put" id="createAcct")
 						div(class="input-field col s10 offset-s1")
-							input(placeholder="Desired Username" id="createUsername" type="text" class="validate")
+							input(placeholder="Desired Username" id="usernameInput" type="text" class="validate")
 						div(class="input-field col s10 offset-s1")
-							input(placeholder="Your e-mail" id="createEmail" type="email" class="validate")
+							input(placeholder="Your e-mail" id="emailInput" type="email" class="validate")
 						div(class="input-field col s10 offset-s1")
-							input(placeholder="Password" id="createPassword" type="password" class="validate")
+							input(placeholder="Password" id="passwordInput" type="password" class="validate")
 						div(class="input-field col s10 offset-s1")
-							input(placeholder="Confirm Password" id="confirmPassword" type="password" class="validate")
+							input(placeholder="Confirm Password" id="passwordConfirm" type="password" class="validate")
 						button#createAccount(class="btn waves-effect waves-light" type="submit" name="action") Create Account
 	.col.s12.m6
 		h5(class="centeredTitle") Login with Existing Account
@@ -21,7 +21,7 @@ block content
 				div(class="row")
 					form(class="col s12" method="put" id="loginForm")
 						div(class="input-field col s10 offset-s1")
-							input(placeholder="Username" id="usernameInput" type="text" class="validate")
+							input(placeholder="Username" id="username" type="text" class="validate")
 						div(class="input-field col s10 offset-s1")
 							input(placeholder="Password" id="password" type="password" class="validate")
 						button#login(class="btn waves-effect waves-light" type="submit" name="action") Login
