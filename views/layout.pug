@@ -4,14 +4,10 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         title Get Ripped
-        script(src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js")
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
-        script(src="../public/assets/js/app.js")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css")
         link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower")
-        link(rel="stylesheet" href="assets/css/style.css")
+        link(rel="stylesheet" href="/assets/css/style.css")
     body(background="http://9b1828418d3f1d35dc28-c1efe15f97cbb00e968d9985eda5a0e7.r51.cf1.rackcdn.com/lps/assets/u/Fitness-center-Falisia-Resort.jpg")
         .navbar-fixed
             nav(class="blue-grey" role="navigation")
@@ -19,10 +15,10 @@ html(lang="en")
                     a(id="login" href="#" class="left") Login
                     a(id="logout" href="#" class="left" hidden="true") Logout
                     a(id="logo-container" href="index.html" class="brand-logo center")
-                        img(height="50" src="placeholder.png")
+                        //- img(height="50" src="placeholder.png")
                     ul(class="right hide-on-med-and-down")
                         li
-                            a(href="placeholder" class="userLink") User
+                            a(href="/api/social" class="userLink") User
                         li
                             a(href="placeholder") Work Out Plans
                         li
@@ -30,7 +26,7 @@ html(lang="en")
                     a(href="#" data-activates="nav-mobile" class="button-collapse right")
         ul(id="nav-mobile" class="side-nav")
             .background
-                img(class="responsive-img" src="public.assets/images/Resort.jpg")
+                //- img(class="responsive-img" src="public.assets/images/Resort.jpg")
             li
                 a(class="subheader") Get Ripped
             li
@@ -42,21 +38,14 @@ html(lang="en")
             li
                 a(href="placeholder") Workouts
             li
-                a(href="placeholder") Social Feed
+                a(href="/api/social") Social Feed
         div(class="row center")
             h1(class="header blue-grey-text text-lighten-2") Get Ripped or Die Trying
             h5 Get ready to work out
             a(href="placeholder.html" class="waves-effect waves-light btn-large amber landingBtn") Workouts
-            a(href="placeholder.html" class="waves-effect waves-light btn-large blue-grey landingBtn") Social Feed
-        .parallax-container
-            .parallax
-                img(src="" alt="Unsplashed background img 2")
-        div(class="row center container")
+            a(href="/api/social" class="waves-effect waves-light btn-large blue-grey landingBtn") Social Feed
+        div(class="row center container" id="main-content")
             block content
-        div(class="row container")
-            div(class="col s12 center")
-                h3
-                h4
         footer(class="page-footer amber")
             .container
                 .row
@@ -73,9 +62,14 @@ html(lang="en")
                         ul
                             li
                                 a(class="white-text" href="#!") Link 1
-        .footer-copyright
-            .container
-                p Follow us at 
-                    a(class="black-text text-lighten-3" href="www.faceook.com/GetRippedCWRU") GetRippedCWRU
-        script(src="assets/javascript/placeholder.js")
-        script(src="assets/javascript/placeholder.js")
+            .footer-copyright
+                .container
+                    p Follow us at 
+                        a(class="black-text text-lighten-3" href="www.faceook.com/GetRippedCWRU") GetRippedCWRU
+        //- script(src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js")
+        script(src="http://code.jquery.com/jquery-3.3.1.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
+        //- script(src="/assets/js/app.js")
+        script(src="/assets/js/exercise.js")
+        script(src="/assets/js/profile.js")
+        script(src="/assets/js/social.js")

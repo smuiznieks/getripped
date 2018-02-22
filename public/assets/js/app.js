@@ -1,4 +1,4 @@
-$(document).ready(){
-	//newuser layout JS
+// $(document).ready(){
+// 	//newuser layout JS
 	
-}
+// }

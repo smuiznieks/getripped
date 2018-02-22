@@ -1,12 +1,4 @@
 $(function() {
-
-    function createFeed() {
-        var post = $('<div>');
-        
-    };
-
-    createFeed();
-
     $('#uploadPost').on('click', function(event) {
         event.preventDefault();
         $.ajax('/api/social', {
