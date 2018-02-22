@@ -18,6 +18,11 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+// Default Path
+app.get("/", function (req, res) {
+    res.render('index');
+});
+
 // Routes
 require('./routes/user-api-routes.js')(app);
 require('./routes/social-api-routes.js')(app);
