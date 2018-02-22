@@ -91,19 +91,19 @@ module.exports = function (app) {
             });
         }
 
-        console.log(req.body);
-        data = req.body;
-        var exerciseName = [];
-        var exerciseDescrip = [];
-        for (var i = 0; i < data.length; i++) {
-            exerciseName.push(data[i].name);
-            exerciseDescrip.push(data[i].description);
-        }
-        // res.render('exercise', { name: exerciseName, description: exerciseDescrip });
-        res.render("exercise", {
-            name: req.exerciseName,
-            description: req.exerciseDescrip
-        });
+        // console.log(req.body);
+        // data = req.body;
+        // var exerciseName = [];
+        // var exerciseDescrip = [];
+        // for (var i = 0; i < data.length; i++) {
+        //     exerciseName.push(data[i].name);
+        //     exerciseDescrip.push(data[i].description);
+        // }
+        // // res.render('exercise', { name: exerciseName, description: exerciseDescrip });
+        // res.render("exercise", {
+        //     name: req.exerciseName,
+        //     description: req.exerciseDescrip
+        // });
     });
 
     // app.post('/api/exercises', function (req, res) {
