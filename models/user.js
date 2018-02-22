@@ -31,6 +31,9 @@ module.exports = function (sequelize, DataTypes) {
             // When an User is deleted, also delete any associated Posts
             onDelete: "cascade"
         });
+        User.hasOne(models.Profile, {
+            onDelete: "cascade"
+        });
     };
 
     return User;
