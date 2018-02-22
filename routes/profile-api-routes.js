@@ -2,25 +2,24 @@
 var db = require('../models');
 
 module.exports = function(app) {
-    // GET all user information
+    // GET display user information
     app.get('/api/profile', function(req, res) {
         db.Profile.findOne({
             where: {
-                
+                UserId: 1
             }
         }).then(function(data) {
-            console.log(data);
-            var profile = data;
-            res.render('profile', { profile: profile });
+            var profile = data.dataValues;
+            res.render('profile', { profPic: profile.profPic, profName: profile.profName, profLocation: profile.profLocation });
         });
     });
 
-    // CREATE new user
-    // app.get('/api/profile', function(req, res) {
-    //     db.User.create(req.body).then(function(newUser) {
-    //         res.json(newUser);
-    //     }).catch(function(err) {
-    //         res.json(err);
-    //     })
-    // })
+    // UPDATE user profile
+    app.get('/api/profile', function(req, res) {
+        db.Profile.update(req.body.profPic, { 
+            where: { UserId: 1 } 
+        }).then(function(updateProf) {
+            res.json(updateProf);
+        });
+    });
 };

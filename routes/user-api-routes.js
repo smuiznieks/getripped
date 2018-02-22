@@ -5,19 +5,25 @@ module.exports = function(app) {
     // GET all user information
     app.get('/api/user', function(req, res) {
         db.User.findAll({}).then(function(data) {
-            var userData = {
-                user: data 
-            };
-            console.log(userData);
+            res.json(data);
         });
     });
 
-    // CREATE new user
-    app.get('/api/user', function(req, res) {
-        db.User.create(req.body).then(function(newUser) {
+    // Render new user page
+    app.get("/newuser", function (req, res) {
+        res.render('newuser');
+    });
+
+    // Create new user
+    app.post('/api/user', function(req, res) {
+        db.User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        }).then(function(newUser) {
             res.json(newUser);
         }).catch(function(err) {
             res.json(err);
-        })
-    })
+        });
+    });
 };
