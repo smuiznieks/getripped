@@ -10,4 +10,6 @@ $(function() {
             }
         );
     });
+
+    $('.modal').modal();     
 });
