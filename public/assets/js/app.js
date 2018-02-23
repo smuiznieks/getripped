@@ -1,4 +1,3 @@
-// $(document).ready(){
-// 	//newuser layout JS
-	
-// }
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})

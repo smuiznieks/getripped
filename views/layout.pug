@@ -18,18 +18,16 @@ html(lang="en")
                     a(id="login" href="#" class="left") Login
                     a(id="logout" href="#" class="left" hidden="true") Logout
                     a(id="logo-container" href="index.html" class="brand-logo center")
-                        //- img(height="50" src="placeholder.png")
+                    a(href="#" data-activates="mobile-demo" class="button-collapse")
+                        i(class="material-icons")| menu
                     ul(class="right hide-on-med-and-down")
                         li
                             a(href="/api/social" class="userLink") User
                         li
-                            a(href="placeholder") Work Out Plans
+                            a(href="/exercise") Work Out Plans
                         li
                             a(href="placeholder") Info and Videos
-                    a(href="#" data-activates="nav-mobile" class="button-collapse right")
-        ul(id="nav-mobile" class="side-nav")
-            .background
-                //- img(class="responsive-img" src="public.assets/images/Resort.jpg")
+        ul(id="mobile-demo" class="side-nav")
             li
                 a(class="subheader") Get Ripped
             li
@@ -39,13 +37,13 @@ html(lang="en")
             li
                 a(href="placeholder" class="userLink") User
             li
-                a(href="placeholder") Workouts
+                a(href="/exercise") Workouts
             li
                 a(href="/api/social") Social Feed
         div(class="row center")
             h1(class="header blue-grey-text text-lighten-2") Get Ripped or Die Trying
             h5 Get ready to work out
-            a(href="placeholder.html" class="waves-effect waves-light btn-large amber landingBtn") Workouts
+            a(href="/exercise" class="waves-effect waves-light btn-large amber landingBtn") Workouts
             a(href="/api/social" class="waves-effect waves-light btn-large blue-grey landingBtn") Social Feed
         div(class="row center container" id="main-content")
             block content
@@ -56,15 +54,16 @@ html(lang="en")
                         h5(class="white-text") Get Ripped
                         p(class="grey-text text-lighten-4")
                     div(class="col l3 s12")
-                        h5(class="white-text") Settings
+                        h5(class="white-text") Get Social
                         ul
                             li
-                                a(class="white-text" href="#!") Link 1
+                                a(href="/api/social") Social Feed
+                                a(href="#!") User Profile
                     div(class="col l3 s12")
-                        h5(class="white-text") Connect
+                        h5(class="white-text") Work It Out
                         ul
                             li
-                                a(class="white-text" href="#!") Link 1
+                                a(class="white-text" href="#!") Sample Workouts
             .footer-copyright
                 .container
                     p Follow us at 
@@ -73,7 +72,7 @@ html(lang="en")
         //- script(src="http://code.jquery.com/jquery-3.3.1.js")
         script(src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
-        //- script(src="/assets/js/app.js")
+        script(src="/assets/js/app.js")
         script(src="/assets/js/exercise.js")
         script(src="/assets/js/profile.js")
         script(src="/assets/js/social.js")
