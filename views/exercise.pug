@@ -4,21 +4,18 @@ block content
         h1|Get Ripped Workouts
         p(class="flow-text")|Select a workout category below for a list of exercises that will get you totally ripped!
         .row(class="center-align")
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="arms")|Arms
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="shoulders")|Shoulders
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="legs")|Legs
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="back")|Back
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="abs")|Abs
-            a(class="waves-effect waves-light btn exercise-btn" data-exercise="chest")|Chest
+            a(class="btn exercise-btn" data-exercise="arms")|Arms
+            a(class="btn exercise-btn" data-exercise="shoulders")|Shoulders
+            a(class="btn exercise-btn" data-exercise="legs")|Legs
+            a(class="btn exercise-btn" data-exercise="back")|Back
+            a(class="btn exercise-btn" data-exercise="abs")|Abs
+            a(class="btn exercise-btn" data-exercise="chest")|Chest
             
 
-        #workouts
-            .card
-                .card-content
-                    .row
-                        .col.s10
-                            
-                        
-                        .col.s2
-                            a(class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Share")
-                                i(class="material-icons")|share
+        .card#workouts
+            .card-content
+                .row
+                    .col.s10
+                    .col.s2
+                        a(class="tooltipped btn-floating btn-large waves-effect waves-light red" data-position="bottom" data-delay="50" data-tooltip="Share")
+                            i(class="material-icons")|share

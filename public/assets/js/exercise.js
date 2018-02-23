@@ -3,78 +3,29 @@ $(document).ready(function () {
     $('.tooltipped').tooltip({ delay: 50 });
 
 
-
+    // 
     $('.exercise-btn').on('click', function (event) {
         event.preventDefault();
+        $('#workouts').empty();
 
-        var exercise = $(this).attr("data-exercise");
-        var queryURL = 'http://localhost:8080/api/exercises?group=' + exercise;
-
+        var exercise = $(this).attr('data-exercise');
 
         $.ajax('/api/exercises', {
-            url: queryURL,
+            data: {
+                group: exercise
+            },
             method: 'GET',
         }).done(function (response) {
-            // $('#workouts').text(JSON.stringify(response));
             console.log(response);
+            for (var i = 0; i < response.length; i++) {
+                var exercise = $('<div class="exercise left-align">');
+                exercise.append('<h4>' + response[i].name + '</h4');
+                exercise.append(response[i].description + '<hr>');
+                $('#workouts').prepend(exercise);
+            }
+
         });
     });
 
 
 });
-
-
-// $('.exercise-btn').on('click', function (event) {
-//     event.preventDefault();
-
-//     var exercise = $(this).attr("data-exercise");
-//     var queryURL = 'http://localhost:8080/api/exercises?group=' + exercise;
-
-
-//     $.ajax('/api/exercises', {
-//         url: queryURL,
-//         method: 'GET',
-//     }).done(function (response) {
-//         // $('#workouts').text(JSON.stringify(response));
-//         console.log(response);
-//     });
-
-// });
-
-// ----------------------------------------
-// ----------------------------------------
-// ----------------------------------------
-
-
-$('.exercise-btn').on("click", function (event) {
-    event.preventDefault();
-
-    // Make a newChirp object
-    var newGroup = {
-        group: $(this).attr("data-exercise")
-    };
-
-    console.log(newGroup);
-
-    // Send an AJAX POST-request with jQuery
-    $.post("/api/exercise", newGroup)
-        // On success, run the following code
-        .then(function () {
-
-            var row = $('<div>');
-            row.addClass("card");
-
-            row.append('<div class="">' + newChirp.author + " chirped: </p>");
-            row.append("<p>" + newChirp.body + "</p>");
-            row.append("<p>At " + moment(newChirp.created_at).format("h:mma on dddd") + "</p>");
-
-            $('#workouts').prepend(row);
-
-        });
-
-    // Empty each input box by replacing the value with an empty string
-    $("#author").val("");
-    $("#chirp-box").val("");
-});
-
-// When the page loads, grab all of our chirps
