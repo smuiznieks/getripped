@@ -1,7 +1,18 @@
 // Import models
 var db = require('../models');
 
+//Create a blank array to hold all the feed posts
+
+
+//Create a constructor for feed posts 
+function postConstructor(photo, caption, userId) {
+    this.photo = photo;
+    this.caption = caption;
+    this.userId = userId;
+};
+
 module.exports = function(app) {
+    
     // GET create feed of all posts
     app.get('/api/social', function(req, res) {
         
@@ -10,15 +21,18 @@ module.exports = function(app) {
 
 
         db.Post.findAll({}).then(function(data) {
-            var feedPhotos = [];
-            var feedBody = [];
-            var feedUser = [];
+            var photoFeed = [];
+            //loop through data in SQL
             for (var i = 0; i < data.length; i++) {
-                feedPhotos.push(data[i].dataValues.photo);
-                feedBody.push(data[i].dataValues.body);
-                feedUser.push(data[i].dataValues.UserId);
+                //shortcut syntax for returned data
+                var iteration = data[i].dataValues;    
+                //run constructor with relevant data passed as arguments
+                var singlePost = new postConstructor(iteration.photo, iteration.body, iteration.UserId);   
+                //push current iteration of constructed object into array
+                photoFeed.unshift(singlePost);
             }
-            res.render('social', { photos: feedPhotos, captions: feedBody, users: feedUser });
+            //render the social page
+            res.render('social', {"postData": photoFeed});
         });
     });
 
