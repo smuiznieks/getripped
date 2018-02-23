@@ -19,15 +19,13 @@ block content
 				button#uploadPost(class="btn waves-effect waves-light" type="submit" name="action") Submit
 	.row
 		h4 Your feed
-		#photo(class="col s6")
-			each val in photos
-				.row
-					img(class="photo" alt="No image available." src=val)
-		#caption(class="col s3")
-			each val in captions
-				.row
-					.caption= val
-		#user(class="col s3")
-			each val in users
-				.row
-					.user= val
+		.row
+			div(class="card")
+				#photo(class="offset-s3 col s6")
+					each val in postData
+						img(class="photo" alt="No image available." src=val.photo)
+					
+						.caption= val.caption
+	
+						.user= val.userId
+						br
