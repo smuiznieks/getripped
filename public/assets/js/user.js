@@ -8,11 +8,22 @@ $(function() {
         } 
         $.ajax('/api/user', {
             type: 'POST',
+            withCredentials: true, 
             data: { username: $('#usernameInput').val().trim(), email: $('#emailInput').val().trim(), password: $('#passwordInput').val().trim() }
         }).then(
-            function() {
-                console.log('Complete');
+            function(response) {
+                if(response.errors) 
+                    console.log('Not complete');
+                else
+                    console.log('Complete');
             }
         );
+    });
+
+    $('#login').on('click', function(event) {
+        event.preventDefault();
+        $.ajax('/api/user', {
+            type: ""
+        }).then();
     });
 });

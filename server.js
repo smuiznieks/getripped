@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var pug = require('pug');
 var path = require('path');
+var session = require('express-session');
 
 // Models
 var db = require("./models");
@@ -13,6 +14,17 @@ var PORT = 8080;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: false,
+        httpOnly: false,
+        maxAge: 10e10
+    }
+  }))
+
 
 // Pug
 app.set('view engine', 'pug');
@@ -31,7 +43,7 @@ require('./routes/profile-api-routes.js')(app);
 
 // Listen to server
 db.sequelize.sync({}).then(function () {
-    app.listen(PORT, function () {
+    app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
 });

@@ -16,14 +16,19 @@ module.exports = function(app) {
 
     // Create new user
     app.post('/api/user', function(req, res) {
-        db.User.create({
+        db.User.findOrCreate( { where: {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
-        }).then(function(newUser) {
-            res.json(newUser);
-        }).catch(function(err) {
-            res.json(err);
-        });
+        }}).spread((user, created) => {
+            debugger;
+            console.log(created, user.dataValues)
+            req.session.uid = user.dataValues.id;
+            req.session.save(() => {
+                if(created){
+                    res.json(user);
+                }
+            })    
+        })
     });
 };
