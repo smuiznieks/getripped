@@ -15,12 +15,14 @@ html(lang="en")
         .navbar-fixed
             nav(class="blue-grey" role="navigation")
                 div(class="nav-wrapper container")
-                    a(id="login" href="#" class="left") Login
+                    a(id="login" href="/newuser" class="left") Login
                     a(id="logout" href="#" class="left" hidden="true") Logout
                     a(id="logo-container" href="index.html" class="brand-logo center")
                     a(href="#" data-activates="mobile-demo" class="button-collapse")
                         i(class="material-icons")| menu
                     ul(class="right hide-on-med-and-down")
+                        li
+                            a(href="/" class="userLink") Home
                         li
                             a(href="/api/social" class="userLink") User Profile
                         li
@@ -35,14 +37,18 @@ html(lang="en")
             li(class="active")
                 a(href="/") Home
             li
-                a(href="placeholder" class="userLink") User Profile
+                a(href="/newuser") Login
+            li
+                a(href="placeholder") User Profile
             li
                 a(href="/exercise") Workouts
             li
                 a(href="/api/social") Social Feed
+
         div(class="row center")
-            h1(class="header blue-grey-text text-lighten-2") Get Ripped or Die Trying
-            h5 Get ready to work out
+            h1(class="header white-text") Get Ripped or Die Trying
+            h3(class="white-text") Get Ready to Work Out
+            br
             a(href="/exercise" class="btn btn-large amber landingBtn") Workouts
             a(href="/api/social" class="btn btn-large landingBtn") Social Feed
         div(class="row center container" id="main-content")
