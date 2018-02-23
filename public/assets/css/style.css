@@ -36,6 +36,6 @@
     background-color: #536C78;
 }
 
-.amber:hover {
+.amber.btn:hover {
 	background-color: #EBB206 !important;
 }
