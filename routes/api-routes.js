@@ -96,13 +96,7 @@ module.exports = function (app) {
 
 
     app.get("/exercise", function (req, res) {
-        var exerciseName = [];
-        var exerciseDescrip = [];
-        // for (var i = 0; i < response.length; i++) {
-        //     exerciseName.push(data[i].dataValues.name);
-        //     exerciseDescrip.push(data[i].dataValues.description);
-        // }
-        res.render('exercise', { name: exerciseName, description: exerciseDescrip });
+        res.render('exercise');
     });
 
 };

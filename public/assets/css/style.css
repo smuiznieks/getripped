@@ -11,3 +11,19 @@
 .photo{
 	max-width: 90%;
 }
+
+#workouts {
+	padding: 10px 20px;
+}
+
+.exercise-btn {
+	margin: 5px;
+}
+
+.page-footer a {
+	color: #eee !important;
+}
+
+.page-footer a:hover {
+	color: #90a4ae !important;
+}
