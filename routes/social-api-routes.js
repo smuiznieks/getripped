@@ -24,7 +24,7 @@ module.exports = function(app) {
                 //run constructor with relevant data passed as arguments
                 var singlePost = new postConstructor(iteration.photo, iteration.body, iteration.UserId);   
                 //push current iteration of constructed object into array
-                photoFeed.push(singlePost);
+                photoFeed.unshift(singlePost);
             }
             //render the social page
             res.render('social', {"postData": photoFeed});
