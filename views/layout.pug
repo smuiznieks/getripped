@@ -15,7 +15,7 @@ html(lang="en")
         .navbar-fixed
             nav(class="blue-grey" role="navigation")
                 div(class="nav-wrapper container")
-                    a(id="login" href="#" class="left") Login
+                    a(id="login" href="/newuser" class="left") Login
                     a(id="logout" href="#" class="left" hidden="true") Logout
                     a(id="logo-container" href="index.html" class="brand-logo center")
                     a(href="#" data-activates="mobile-demo" class="button-collapse")
@@ -37,11 +37,14 @@ html(lang="en")
             li(class="active")
                 a(href="/") Home
             li
-                a(href="placeholder" class="userLink") User Profile
+                a(href="/newuser") Login
+            li
+                a(href="placeholder") User Profile
             li
                 a(href="/exercise") Workouts
             li
                 a(href="/api/social") Social Feed
+
         div(class="row center")
             h1(class="header white-text") Get Ripped or Die Trying
             h3(class="white-text") Get Ready to Work Out
