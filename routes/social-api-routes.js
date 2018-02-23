@@ -15,11 +15,6 @@ module.exports = function(app) {
     
     // GET create feed of all posts
     app.get('/api/social', function(req, res) {
-        
-            console.log(req.session)
-        
-
-
         db.Post.findAll({}).then(function(data) {
             var photoFeed = [];
             //loop through data in SQL
@@ -38,10 +33,11 @@ module.exports = function(app) {
 
     // POST upload a new social post
     app.post('/api/social', function(req, res) {
+        console.log('UID: ' + req.session.uid);
         db.Post.create({
             photo: req.body.photo,
             body: req.body.caption,
-            UserId: 1
+            UserId: req.session.uid
         }).then(function(newPost) {
             res.json(newPost);
         }).catch(function(err) {
