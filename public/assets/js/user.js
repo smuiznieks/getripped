@@ -21,4 +21,11 @@ $(function () {
                 }
             );
     });
+
+    $('#login').on('click', function(event) {
+        event.preventDefault();
+        $.ajax('/api/user', {
+            type: ""
+        }).then();
+    });
 });

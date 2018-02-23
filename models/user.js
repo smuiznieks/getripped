@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
         
         username: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             validate: {
                 len: [1],
                 is: /^[a-z]+$/i
@@ -11,17 +11,14 @@ module.exports = function (sequelize, DataTypes) {
         },
         email: {
             type: DataTypes.STRING,
+            allowNull: false,
             validate: {
-                allowNull: false,
                 isEmail: true
             }
         },
         password: {
             type: DataTypes.STRING,
-            validate: {
-                allowNull: false,
-                len: [1]
-            }
+            allowNull: false
         }
     });
 
