@@ -14,7 +14,7 @@ $(function () {
         };
 
 
-        $.ajax('/api/user', newUser)
+        $.post('/api/user', newUser)
             .then(
                 function () {
                     console.log('Complete');

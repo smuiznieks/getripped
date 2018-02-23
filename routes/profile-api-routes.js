@@ -3,11 +3,9 @@ var db = require('../models');
 
 module.exports = function(app) {
     // GET display user information
-    app.get('/api/profile', function(req, res) {
+    app.get('/profile/:UserId', function(req, res) {
         db.Profile.findOne({
-            where: {
-                UserId: 1
-            }
+            where: { UserId: req.session.uid }
         }).then(function(data) {
             var profile = data.dataValues;
             res.render('profile', { profPic: profile.profPic, profName: profile.profName, profLocation: profile.profLocation });
@@ -15,9 +13,9 @@ module.exports = function(app) {
     });
 
     // UPDATE user profile
-    app.get('/api/profile', function(req, res) {
+    app.get('/profile/:UserId', function(req, res) {
         db.Profile.update(req.body.profPic, { 
-            where: { UserId: 1 } 
+            where: { UserId: req.session.uid } 
         }).then(function(updateProf) {
             res.json(updateProf);
         });
