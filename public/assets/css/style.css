@@ -27,3 +27,15 @@
 .page-footer a:hover {
 	color: #90a4ae !important;
 }
+
+.btn, .btn-large {
+    background-color: #607d8b;
+}
+
+.btn:hover {
+    background-color: #536C78;
+}
+
+.amber:hover {
+	background-color: #EBB206 !important;
+}

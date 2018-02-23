@@ -22,20 +22,20 @@ html(lang="en")
                         i(class="material-icons")| menu
                     ul(class="right hide-on-med-and-down")
                         li
-                            a(href="/api/social" class="userLink") User
+                            a(href="/api/social" class="userLink") User Profile
                         li
                             a(href="/exercise") Work Out Plans
                         li
-                            a(href="placeholder") Info and Videos
+                            a(href="/api/social") Social Feed
         ul(id="mobile-demo" class="side-nav")
             li
                 a(class="subheader") Get Ripped
             li
                 .divider
             li(class="active")
-                a(href="index.html") Home
+                a(href="/") Home
             li
-                a(href="placeholder" class="userLink") User
+                a(href="placeholder" class="userLink") User Profile
             li
                 a(href="/exercise") Workouts
             li
@@ -43,8 +43,8 @@ html(lang="en")
         div(class="row center")
             h1(class="header blue-grey-text text-lighten-2") Get Ripped or Die Trying
             h5 Get ready to work out
-            a(href="/exercise" class="waves-effect waves-light btn-large amber landingBtn") Workouts
-            a(href="/api/social" class="waves-effect waves-light btn-large blue-grey landingBtn") Social Feed
+            a(href="/exercise" class="btn btn-large amber landingBtn") Workouts
+            a(href="/api/social" class="btn btn-large landingBtn") Social Feed
         div(class="row center container" id="main-content")
             block content
         footer(class="page-footer amber")
@@ -58,12 +58,13 @@ html(lang="en")
                         ul
                             li
                                 a(href="/api/social") Social Feed
+                            li
                                 a(href="#!") User Profile
                     div(class="col l3 s12")
                         h5(class="white-text") Work It Out
                         ul
                             li
-                                a(class="white-text" href="#!") Sample Workouts
+                                a(href="/exercise") Sample Workouts
             .footer-copyright
                 .container
                     p Follow us at 
