@@ -50,6 +50,7 @@ module.exports = function (app) {
 
 
     app.get('/api/exercises', function (req, res, next) {
+        // console.log(req.query)
         if (req.query.group === 'arms') {
             combineWorkoutManager(req, res, next, exerciseEndpoint, [
                 { muscles: 1 },
@@ -90,34 +91,18 @@ module.exports = function (app) {
                 message: 'You need to specify a valid muscle group by providing a \'group\' query string.'
             });
         }
-
-        // console.log(req.body);
-        // data = req.body;
-        // var exerciseName = [];
-        // var exerciseDescrip = [];
-        // for (var i = 0; i < data.length; i++) {
-        //     exerciseName.push(data[i].name);
-        //     exerciseDescrip.push(data[i].description);
-        // }
-        // // res.render('exercise', { name: exerciseName, description: exerciseDescrip });
-        // res.render("exercise", {
-        //     name: req.exerciseName,
-        //     description: req.exerciseDescrip
-        // });
     });
 
-    // app.post('/api/exercises', function (req, res) {
-    //     var group = req.query.group;
-    //     console.log(group)
-    //         .then(function (group) {
-    //             res.json(group);
-    //         }).catch(function (err) {
-    //             res.json(err);
-    //         });
-    // });
+
 
     app.get("/exercise", function (req, res) {
-        res.render("exercise", req.body);
+        var exerciseName = [];
+        var exerciseDescrip = [];
+        // for (var i = 0; i < response.length; i++) {
+        //     exerciseName.push(data[i].dataValues.name);
+        //     exerciseDescrip.push(data[i].dataValues.description);
+        // }
+        res.render('exercise', { name: exerciseName, description: exerciseDescrip });
     });
 
 };
