@@ -9,8 +9,10 @@ $(function() {
 
         $.post('/api/profile/:id', updatedProfile).then(
             function() {
-                console.log('Updated.');
+                location.reload();
             }
         );
     });
+
+    $('.modal').modal();
 });

@@ -5,7 +5,8 @@ module.exports = function(app) {
     // GET display user information
     app.get('/profile/:id', function(req, res) {
         db.User.findOne({
-            where: { id: req.session.uid }
+            where: { id: req.session.uid },
+            // include: [db.Profile]
         }).then(function(data) {
             res.render('profile', { username: data.dataValues.username });
         });
@@ -19,18 +20,21 @@ module.exports = function(app) {
             profLocation: req.body.profLocation,
             UserId: req.session.uid
         }).then(function(data) {
-            res.render('profile', { profName: data.dataValues.profName });
+            console.log(data.dataValues.profName);
+            console.log(data.dataValues.profLocation);
+            res.render('profile', { profName: data.dataValues.profName, profLocation: data.dataValues.profLocation });
         });
     });
 
     // Display updated profile info
-    app.get('/api/profile/:id', function(req, res) {
-        db.Profile.findOne({
-            where: { id: req.session.uid },
-            order: [ [ 'createdAt', 'DESC' ]],
-        }).then(function(data) {
-            console.log(data);
-            res.render('profile', { username: data.dataValues.username });
-        });
-    });
+    // app.get('/api/profile/:id', function(req, res) {
+    //     db.Profile.findAll({
+    //         limit: 1,
+    //         where: { id: req.session.uid },
+    //         order: [ [ 'createdAt', 'DESC' ]],
+    //     }).then(function(data) {
+    //         console.log(data);
+    //         res.render('profile', { username: data.dataValues.username });
+    //     });
+    // });
 };
