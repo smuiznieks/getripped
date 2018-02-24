@@ -2,7 +2,7 @@ const Nightmare = require('nightmare')
 const assert = require('assert')
 
 describe('Load a Page', function(){
-    this.timeout('30s')
+    this.timeout('60s')
 
     let nightmare = null
     beforeEach(() => {
@@ -10,7 +10,7 @@ describe('Load a Page', function(){
 
         describe('/ (Home Page)', () => {
             it('should load without error', done => {
-                nightmare.goto('www.-.com')    
+                nightmare.goto(' insert heroku main website/app link ')    
                 .end()
                 .then(fucntion(result {
                 done()
