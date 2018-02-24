@@ -5,24 +5,28 @@ var db = require('../models');
 
 
 //Create a constructor for feed posts 
-function postConstructor(photo, caption, userId) {
+function postConstructor(photo, caption, userId, username) {
     this.photo = photo;
     this.caption = caption;
     this.userId = userId;
+    this.username = username;
 };
 
 module.exports = function(app) {
     
     // GET create feed of all posts
     app.get('/social', function(req, res) {
-        db.Post.findAll({}).then(function(data) {
+        db.Post.findAll({
+        	include: [db.User]
+        }).then(function(data) {
             var photoFeed = [];
             //loop through data in SQL
             for (var i = 0; i < data.length; i++) {
                 //shortcut syntax for returned data
-                var iteration = data[i].dataValues;    
+                var iteration = data[i].dataValues;
+                var joined = data[i].dataValues.User.dataValues;    
                 //run constructor with relevant data passed as arguments
-                var singlePost = new postConstructor(iteration.photo, iteration.body, iteration.UserId);   
+                var singlePost = new postConstructor(iteration.photo, iteration.body, iteration.UserId, joined.username);   
                 //push current iteration of constructed object into array
                 photoFeed.unshift(singlePost);
             }
