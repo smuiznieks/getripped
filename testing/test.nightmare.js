@@ -6,8 +6,6 @@ nightmare
   .click(" ")
   .goto(" ")
   .goto(" ")
-  .goto(" ")
-  .goto(" ")
   .end()
   .then(function(result) {
     console.log("The tests ran successfully.");
