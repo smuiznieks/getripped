@@ -1,11 +1,11 @@
 var Nightmare = require("nightmare");
 var nightmare = Nightmare({ show: true });
 nightmare
-  .goto(" ")
-  .goto(" ")
+  .goto(" insert heroku link ")
+  .goto(" insert heroku link ")
   .click(" ")
-  .goto(" ")
-  .goto(" ")
+  .goto(" insert heroku link ")
+  .goto(" insert heroku link ")
   .end()
   .then(function(result) {
     console.log("The tests ran successfully.");
