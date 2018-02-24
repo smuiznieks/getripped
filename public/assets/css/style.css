@@ -39,3 +39,7 @@
 .amber.btn:hover {
 	background-color: #EBB206 !important;
 }
+
+#passwordError {
+	color: red;
+}

@@ -3,21 +3,14 @@ module.exports = function (sequelize, DataTypes) {
         profName: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [1]
-            }
         },
         profPic: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [1]
-            }
         },
         profLocation: {
             type: DataTypes.STRING,
             allowNull: true,
-            len: [1]
         }
     });
 
