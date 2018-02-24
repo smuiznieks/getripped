@@ -3,21 +3,34 @@ var db = require('../models');
 
 module.exports = function(app) {
     // GET display user information
-    app.get('/profile/:UserId', function(req, res) {
-        db.Profile.findOne({
-            where: { UserId: req.session.uid }
+    app.get('/profile/:id', function(req, res) {
+        db.User.findOne({
+            where: { id: req.session.uid }
         }).then(function(data) {
-            var profile = data.dataValues;
-            res.render('profile', { profPic: profile.profPic, profName: profile.profName, profLocation: profile.profLocation });
+            res.render('profile', { username: data.dataValues.username });
         });
     });
 
     // UPDATE user profile
-    app.get('/profile/:UserId', function(req, res) {
-        db.Profile.update(req.body.profPic, { 
-            where: { UserId: req.session.uid } 
-        }).then(function(updateProf) {
-            res.json(updateProf);
+    app.post('/api/profile/:id', function(req, res) {
+        db.Profile.create({
+            profName: req.body.profName,
+            profPic: req.body.profPic,
+            profLocation: req.body.profLocation,
+            UserId: req.session.uid
+        }).then(function(data) {
+            res.render('profile', { profName: data.dataValues.profName });
+        });
+    });
+
+    // Display updated profile info
+    app.get('/api/profile/:id', function(req, res) {
+        db.Profile.findOne({
+            where: { id: req.session.uid },
+            order: [ [ 'createdAt', 'DESC' ]],
+        }).then(function(data) {
+            console.log(data);
+            res.render('profile', { username: data.dataValues.username });
         });
     });
 };

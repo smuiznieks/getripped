@@ -1,22 +1,16 @@
 $(function() {
-    $('#submitProfPic').on('click', function(event) {
+    $('#updateProfile').on('click', function(event) {
         event.preventDefault();
-        console.log($('#updatePic').val().trim());
-        $.ajax('/api/profile', {
-            type: 'PUT',
-            data: { profPic: $('#updatePic').val().trim() }
-        }).then(
+        var updatedProfile = {
+            profName: $('#updateName').val().trim(),
+            profPic: $('#updatePic').val().trim(),
+            profLocation: $('#updateLocation').val().trim(),
+        };
+
+        $.post('/api/profile/:id', updatedProfile).then(
             function() {
-                location.reload();
+                console.log('Updated.');
             }
         );
-    });
-
-    $('#submitName').on('click', function(event) {
-        event.preventDefault();
-    });
-
-    $('#submitLocation').on('click', function(event) {
-        event.preventDefault();
     });
 });

@@ -14,6 +14,11 @@ module.exports = function(app) {
         res.render('newuser');
     });
 
+    // Render login page
+    app.get("/login", function (req, res) {
+        res.render('login');
+    });
+
     // Create new user
     app.post('/api/user', function(req, res) {
         db.User.findOrCreate( { where: {
@@ -31,4 +36,20 @@ module.exports = function(app) {
             })    
         })
     });
+
+    // Existing user login
+    app.post('/api/user', function(req, res) {
+        db.User.findOrCreate( { where: {
+            email: req.body.validUser,
+            password: req.body.validPassword         
+        }}).spread((user, created) => {
+            console.log(created, user.dataValues)
+            req.session.uid = user.dataValues.id;
+            req.session.save(() => {
+                if(created){
+                    res.json(user);
+                }
+            });
+        })
+    })
 };

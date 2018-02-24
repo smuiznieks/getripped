@@ -23,8 +23,7 @@ app.use(session({
         httpOnly: false,
         maxAge: 10e10
     }
-  }))
-
+}));
 
 // Pug
 app.set('view engine', 'pug');

@@ -2,7 +2,6 @@
 $(document).ready(function () {
     $('.tooltipped').tooltip({ delay: 50 });
 
-
     // 
     $('.exercise-btn').on('click', function (event) {
         event.preventDefault();
@@ -26,6 +25,5 @@ $(document).ready(function () {
 
         });
     });
-
 
 });
